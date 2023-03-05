@@ -1,5 +1,6 @@
 import bot from "./assets/bot.svg";
 import user from "./assets/user.svg";
+const APIKEY = import.meta.env.VITE_OPEN_AI_API_KEY;
 
 const form = document.querySelector("form");
 const chatContainer = document.querySelector("#chat_container");
@@ -79,7 +80,7 @@ const handleSubmit = async (e) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer ${APIKEY}`,
       },
       body: JSON.stringify({
         model: "text-davinci-003",
